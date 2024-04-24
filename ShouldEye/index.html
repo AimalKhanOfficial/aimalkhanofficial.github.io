@@ -30,13 +30,24 @@
         $(document).ready(function () {
             let answersMap = ['Ammi nahi manengi :(', 'Dekhte hain :)', 'Yar wife ka mood kharab hay', 'NO', 'BC, isko kya jawab doon?'];
             let counter = 0;
-            $('#nextBtn').click(function () {
+
+            //method to switch answers
+            let switchAnswer = function () {
                 if (counter === answersMap.length) {
                     counter = 0;
                 }
                 $('#answer').text(answersMap[counter]);
                 counter++;
+            }
+
+            //event handlers - onclick and on space keydown
+            $('#nextBtn').click(switchAnswer);
+            $(document).keydown(function(event) {
+                if (event.keyCode === 32) {
+                    switchAnswer();
+                }
             });
+            
         });
     </script>
 </body>
