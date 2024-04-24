@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-[#ff4136]">
+    <div class="mt-[190px]">
+        <div class="flex justify-center">
+            <div id="questions-block">
+                <p class="text-white max-[640px]:text-[18px] text-[30px] font-mono uppercase">Oye, baahr chalen?</p>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div>
+                <p id="answer" class="text-black max-[640px]:text-[30px] text-[70px] font-sans font-bold">Jaib mai phuti kori nai</p>
+            </div>
+        </div>
+        <div class="flex justify-center mt-[10px]">
+            <p id="nextBtn" class="cursor-pointer text-[#b30a00] text-[15px] font-mono">Hit <span
+                    class="border border-[#b30a00] p-[5px] rounded-md">Space</span> or Click</p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            let answersMap = ['Ammi nahi manengi :(', 'Dekhte hain :)', 'Yar wife ka mood kharab hay', 'NO', 'BC, isko kya jawab doon?'];
+            let counter = 0;
+            $('#nextBtn').click(function () {
+                if (counter === answersMap.length) {
+                    counter = 0;
+                }
+                $('#answer').text(answersMap[counter]);
+                counter++;
+            });
+        });
+    </script>
+</body>
+
+</html>
